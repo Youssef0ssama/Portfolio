@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
-  ChevronDown,
   Github,
   Linkedin,
   Mail,
   Phone,
-  Download,
 } from "lucide-react";
 
 const Hero = () => {

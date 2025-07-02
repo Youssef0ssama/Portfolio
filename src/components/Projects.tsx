@@ -1,12 +1,9 @@
-import React from "react";
 import {
-  ExternalLink,
   Github,
   ShoppingBag,
   Home,
   Tv,
   Figma,
-  LayoutTemplate,
 } from "lucide-react";
 
 const Projects = () => {
