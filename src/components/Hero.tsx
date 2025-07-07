@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Phone,
-} from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import profile_pic from "../assets/images/My photo.jpg"; 
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -35,8 +31,15 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Profile Image - Changed initial to Y */}
           <div className="mb-8">
-            <div className="w-40 h-40 mx-auto bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
+            {/* <div className="w-40 h-40 mx-auto bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
               Y
+            </div> */}
+            <div className="w-60 h-60 mx-auto rounded-full overflow-hidden shadow-2xl">
+              <img
+                src={profile_pic} // Updated image path
+                alt="Youssef"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -89,7 +92,7 @@ const Hero = () => {
           {/* Contact Links - Updated to match CV */}
           <div className="flex justify-center space-x-6 mb-12">
             <a
-              href="#" // Placeholder since CV only says "Github"
+              href="https://github.com/Youssef0ssama" // Placeholder since CV only says "Github"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-slate-700 hover:text-blue-600"
@@ -97,7 +100,7 @@ const Hero = () => {
               <Github size={24} />
             </a>
             <a
-              href="#" // Placeholder since CV only says "Linkedin"
+              href="https://www.linkedin.com/in/youssef-0ssama/" // Placeholder since CV only says "Linkedin"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-slate-700 hover:text-blue-600"

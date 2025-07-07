@@ -1,10 +1,7 @@
-import {
-  Github,
-  ShoppingBag,
-  Home,
-  Tv,
-  Figma,
-} from "lucide-react";
+import { Github, ShoppingBag, Home, Tv, Figma } from "lucide-react";
+import adidasImage from "../assets/images/adidas.jpg"; // Adjust the path as needed
+import airbnbImage from "../assets/images/airbnb.png"; // Adjust the path as needed
+import netflixImage from "../assets/images/icon.png"; // Adjust the path as needed
 
 const Projects = () => {
   const projects = [
@@ -13,6 +10,7 @@ const Projects = () => {
       description:
         "Web project serves as a homage and innovative reinterpretation, offering an immersive experience similar to Adidas website.",
       icon: ShoppingBag,
+      image: adidasImage, // Use the imported image
       technologies: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
       github: "https://github.com/Youssef0ssama/Addidas-clone",
 
@@ -28,6 +26,7 @@ const Projects = () => {
       description:
         "Designed and developed a responsive Airbnb UI project on Figma with a user-centric approach.",
       icon: Home,
+      image: airbnbImage, // Use the imported image
       technologies: ["Figma", "UI/UX Design"],
       external:
         "https://www.figma.com/community/file/1346919958313795499/airbnb",
@@ -43,6 +42,7 @@ const Projects = () => {
       description:
         "Created a Netflix clone website replicating the interface for sign in, login & subscription. Included ERD, Use case, Data Flow, Test case.",
       icon: Tv,
+      image: netflixImage, // Use the imported image
       technologies: ["HTML", "CSS", "Figma", "UI Design"],
       github: "https://github.com/Youssef0ssama/Netflix-clone",
       external:
@@ -86,7 +86,7 @@ const Projects = () => {
                 className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden border border-white/20"
               >
                 {/* Project Header */}
-                <div className="p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+                {/* <div className="p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
                   <div className="flex items-center justify-between mb-4">
                     <div className="p-3 bg-white/20 rounded-lg">
                       <project.icon size={24} />
@@ -114,6 +114,52 @@ const Projects = () => {
                   <p className="text-blue-100 text-sm leading-relaxed">
                     {project.description}
                   </p>
+                </div> */}
+                <div
+                  className="relative h-48 text-white overflow-hidden"
+                  style={{
+                    backgroundImage: `url('${project.image}`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/50"></div>
+
+                  {/* Content on top */}
+                  <div className="relative p-6 flex flex-col justify-between h-full">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="p-3 bg-white/20 rounded-lg">
+                        <project.icon size={24} />
+                      </div>
+                      <div className="flex space-x-3">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
+                        >
+                          <Github size={18} />
+                        </a>
+                        <a
+                          href={project.external}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
+                        >
+                          <Figma size={18} />
+                        </a>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-blue-100">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Project Body */}
