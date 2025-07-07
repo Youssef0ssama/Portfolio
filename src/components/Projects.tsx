@@ -115,28 +115,31 @@ const Projects = () => {
                     {project.description}
                   </p>
                 </div> */}
-                <div
-                  className="relative h-48 text-white overflow-hidden"
-                  style={{
-                    backgroundImage: `url('${project.image}`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-black/50"></div>
+                <div className="relative h-48 overflow-hidden rounded-2xl">
+                  {/* Background with overlay */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url('${project.image}')`,
+                      backgroundBlendMode: "multiply",
+                      backgroundColor: "rgba(30, 64, 175, 0.7)",
+                    }}
+                  ></div>
+                  {/* Optional darker overlay */}
+                  <div className="absolute inset-0 bg-blue-800/50"></div>
 
-                  {/* Content on top */}
-                  <div className="relative p-6 flex flex-col justify-between h-full">
+                  {/* Content */}
+                  <div className="relative z-10 p-6 flex flex-col justify-between h-full text-white">
                     <div className="flex items-center justify-between mb-4">
                       <div className="p-3 bg-white/20 rounded-lg">
-                        <project.icon size={24} />
+                        <project.icon size={24} aria-label="Project icon" />
                       </div>
                       <div className="flex space-x-3">
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="View on GitHub"
                           className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
                         >
                           <Github size={18} />
@@ -145,6 +148,7 @@ const Projects = () => {
                           href={project.external}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="View external link"
                           className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
                         >
                           <Figma size={18} />
