@@ -1,61 +1,77 @@
-import { Github, ShoppingBag, Home, Tv, Figma } from "lucide-react";
-import adidasImage from "../assets/images/adidas.jpg"; // Adjust the path as needed
-import airbnbImage from "../assets/images/airbnb.png"; // Adjust the path as needed
-import netflixImage from "../assets/images/icon.png"; // Adjust the path as needed
+import { Github, Home, Tv, Figma, Globe } from "lucide-react";
+import islamicImage from "../assets/images/islamic.png";
+import hotelImage from "../assets/images/Hotel.png";
+import logoImage from "../assets/images/schedsmart.png";
+import airbnbImage from "../assets/images/airbnb.png";
+
+const projects = [
+  {
+    title: "American Islamic Diversity",
+    description:
+      "Transformed a static, hard-coded nonprofit website into a dynamic platform by designing and implementing a full backend (Node.js, Express, SQLite) and admin UI for content management.",
+    icon: Globe,
+    image: islamicImage,
+    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "Node.js", "Express", "SQLite"],
+    github: undefined,
+    external: "https://americanislamicdiversity.org/",
+    features: [
+      "Dynamic Content Management",
+      "Admin Dashboard",
+      "Full Backend Integration",
+      "Nonprofit Platform"
+    ],
+  },
+  {
+    title: "Hotel and Tour Booking Platform",
+    description:
+      "Web project serves as a modern and user-friendly hotel and tour booking platform, offering an immersive experience inspired by leading travel websites. (Career 180/Learn it Final Project)",
+    icon: Home,
+    image: hotelImage,
+    technologies: ["React.js", "Redux", "CSS Modules", "JavaScript"],
+    github: "https://github.com/emy185/hotels.git",
+    external: "https://hotels-one-jet.vercel.app/",
+    features: [
+      "Hotel Booking",
+      "Tour Booking",
+      "Modern UI",
+      "Responsive Design"
+    ],
+  },
+  {
+    title: "SCHEDSMART",
+    description:
+      "Developed a university scheduling web application for Alexandria University, enabling efficient timetable generation and management for students and staff. (Graduation Final Project)",
+    icon: Tv,
+    image: logoImage,
+    technologies: ["React.js", "Tailwind CSS", "Vite", "NestJS", "TypeScript", "Flask", "OR-Tools", "Docker", "PostgreSQL"],
+    github: undefined,
+    external: undefined,
+    features: [
+      "Timetable Generation",
+      "Student & Staff Management",
+      "Multi-Stack Integration",
+      "University Scheduling"
+    ],
+  },
+  {
+    title: "Airbnb Mobile App Design",
+    description:
+      "Designed and developed a responsive Airbnb UI project on Figma, showcasing meticulous attention to detail and a user-centric approach, ensuring seamless accessibility across various devices.",
+    icon: Figma,
+    image: airbnbImage,
+    technologies: ["Figma"],
+    github: undefined,
+    external: "https://www.figma.com/community/file/1346919958313795499/airbnb",
+    features: [
+      "Mobile App Design",
+      "User-Centric Approach",
+      "Responsive UI",
+      "Prototyping"
+    ],
+  },
+];
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Addidas E-Commerce Website",
-      description:
-        "Web project serves as a homage and innovative reinterpretation, offering an immersive experience similar to Adidas website.",
-      icon: ShoppingBag,
-      image: adidasImage, // Use the imported image
-      technologies: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
-      github: "https://github.com/Youssef0ssama/Addidas-clone",
-
-      features: [
-        "Immersive Experience",
-        "Product Showcase",
-        "Responsive Design",
-        "E-Commerce Functionality",
-      ],
-    },
-    {
-      title: "Airbnb Mobile App Design",
-      description:
-        "Designed and developed a responsive Airbnb UI project on Figma with a user-centric approach.",
-      icon: Home,
-      image: airbnbImage, // Use the imported image
-      technologies: ["Figma", "UI/UX Design"],
-      external:
-        "https://www.figma.com/community/file/1346919958313795499/airbnb",
-      features: [
-        "Mobile App Design",
-        "Responsive UI",
-        "User-Centric Approach",
-        "Prototyping",
-      ],
-    },
-    {
-      title: "Netflix Website",
-      description:
-        "Created a Netflix clone website replicating the interface for sign in, login & subscription. Included ERD, Use case, Data Flow, Test case.",
-      icon: Tv,
-      image: netflixImage, // Use the imported image
-      technologies: ["HTML", "CSS", "Figma", "UI Design"],
-      github: "https://github.com/Youssef0ssama/Netflix-clone",
-      external:
-        "https://www.figma.com/community/file/1346917923422643114/netflix",
-      features: [
-        "Sign In Interface",
-        "Subscription Flow",
-        "ERD Diagrams",
-        "Use Case Diagrams",
-      ],
-    },
-  ];
-
   return (
     <section
       id="projects"
@@ -85,95 +101,30 @@ const Projects = () => {
                 key={index}
                 className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden border border-white/20"
               >
-                {/* Project Header */}
-                {/* <div className="p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 bg-white/20 rounded-lg">
-                      <project.icon size={24} />
-                    </div>
-                    <div className="flex space-x-3">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
-                      >
-                        <Github size={18} />
-                      </a>
-                      <a
-                        href={project.external}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
-                      >
-                        <Figma size={18} />
-                      </a>
-                    </div>
+                <div className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden h-full">
+                  {/* Image at the top */}
+                  <div className="w-full h-64 bg-white flex items-center justify-center rounded-t-2xl overflow-hidden relative">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-contain"
+                    />
+                    <div className="absolute inset-0 pointer-events-none rounded-t-2xl bg-blue-500/20 shadow-lg shadow-blue-500/30"></div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-blue-100 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                </div> */}
-                <div className="relative h-48 overflow-hidden rounded-2xl">
-                  {/* Background with overlay */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url('${project.image}')`,
-                      backgroundBlendMode: "multiply",
-                      backgroundColor: "rgba(30, 64, 175, 0.7)",
-                    }}
-                  ></div>
-                  {/* Optional darker overlay */}
-                  <div className="absolute inset-0 bg-blue-800/50"></div>
-
-                  {/* Content */}
-                  <div className="relative z-10 p-6 flex flex-col justify-between h-full text-white">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 bg-white/20 rounded-lg">
-                        <project.icon size={24} aria-label="Project icon" />
-                      </div>
-                      <div className="flex space-x-3">
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="View on GitHub"
-                          className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
-                        >
-                          <Github size={18} />
-                        </a>
-                        <a
-                          href={project.external}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="View external link"
-                          className="p-2 bg-white/20 rounded-lg hover:bg-white/30 transition-colors duration-200"
-                        >
-                          <Figma size={18} />
-                        </a>
-                      </div>
+                  {/* Card content below image */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="p-2 bg-blue-100 rounded-lg text-blue-700">
+                        <project.icon size={24} />
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-blue-100">
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Body */}
-                <div className="p-6">
-                  {/* Technologies */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-slate-700 mb-3">
-                      Technologies Used
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <h3 className="text-xl font-bold mb-2 text-slate-800">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm mb-4">
+                      {project.description}
+                    </p>
+                    <div className="mb-4 flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
@@ -183,24 +134,32 @@ const Projects = () => {
                         </span>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Features */}
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-700 mb-3">
-                      Key Features
-                    </h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, featureIndex) => (
-                        <li
-                          key={featureIndex}
-                          className="flex items-center text-sm text-slate-600"
+                    <div className="flex space-x-3 mt-auto">
+                      {project.external && (
+                        <a
+                          href={project.external}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/80 rounded-lg hover:bg-blue-100 transition-colors duration-200 text-blue-600 flex items-center space-x-1 text-sm font-semibold"
+                          aria-label="View Live"
                         >
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                          <Globe size={18} />
+                          <span>Live</span>
+                        </a>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/80 rounded-lg hover:bg-blue-100 transition-colors duration-200 text-slate-700 flex items-center space-x-1 text-sm font-semibold"
+                          aria-label="View on GitHub"
+                        >
+                          <Github size={18} />
+                          <span>GitHub</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
