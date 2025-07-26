@@ -6,55 +6,9 @@ import {
   GitBranch,
   Palette,
 } from "lucide-react";
+import { skillCategories, skillTraits } from "../mock";
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Languages",
-      icon: Globe,
-      skills: [
-        { name: "Arabic (Native)", level: 100 },
-        { name: "English (Proficient)", level: 90 },
-      ],
-    },
-    {
-      title: "Programming",
-      icon: Code,
-      skills: [
-        { name: "Python", level: 80 },
-        { name: "Java", level: 75 },
-      ],
-    },
-    {
-      title: "Web Development",
-      icon: LayoutTemplate,
-      skills: [
-        { name: "HTML", level: 90 },
-        { name: "CSS", level: 85 },
-        { name: "JavaScript", level: 80 },
-      ],
-    },
-    {
-      title: "Frameworks & Libraries",
-      icon: GitBranch,
-      skills: [{ name: "React", level: 75 }],
-    },
-    {
-      title: "Databases",
-      icon: Database,
-      skills: [{ name: "MySQL", level: 70 }],
-    },
-    {
-      title: "Tools & Design",
-      icon: Palette,
-      skills: [
-        { name: "Git", level: 80 },
-        { name: "Figma", level: 75 },
-        { name: "Illustrator", level: 70 },
-      ],
-    },
-  ];
-
   const getBarColor = (level: number) => {
     if (level >= 85) return "from-green-500 to-emerald-500";
     if (level >= 75) return "from-blue-500 to-indigo-500";
@@ -137,12 +91,7 @@ const Skills = () => {
                 updated with the latest frontend technologies and design trends.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                {[
-                  "Frontend Development",
-                  "UI/UX Design",
-                  "Problem Solving",
-                  "Analytical Thinking",
-                ].map((trait) => (
+                {skillTraits.map((trait) => (
                   <span
                     key={trait}
                     className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-sm font-medium"

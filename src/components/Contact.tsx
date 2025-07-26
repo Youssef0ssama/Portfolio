@@ -9,6 +9,7 @@ import {
   Calendar,
   MessageCircle,
 } from "lucide-react";
+import { contactInfo, socialLinks } from "../mock";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,58 +47,6 @@ const Contact = () => {
     // Reset status after 3 seconds
     setTimeout(() => setSubmitStatus("idle"), 3000);
   };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      value: "youssefossama210@gmail.com",
-      href: "mailto:youssefossama210@gmail.com",
-      description: "Send me an email anytime",
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "+20 01061836090",
-      href: "tel:+2001061836090",
-      description: "Call or WhatsApp available",
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      value: "Alexandria, Egypt",
-      href: "#",
-      description: "Available for remote work",
-    },
-    {
-      icon: Calendar,
-      title: "Availability",
-      value: "Open to opportunities",
-      href: "#",
-      description: "Junior frontend developer roles",
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: Github,
-      name: "GitHub",
-      href: "https://github.com/Youssef0ssama",
-      color: "hover:text-gray-800",
-    },
-    {
-      icon: Linkedin,
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/youssef-0ssama/",
-      color: "hover:text-blue-600",
-    },
-    {
-      icon: Mail,
-      name: "Email",
-      href: "mailto:youssefossama210@gmail.com",
-      color: "hover:text-red-600",
-    },
-  ];
 
   return (
     <section

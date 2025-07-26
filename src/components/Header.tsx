@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Code2, User, Briefcase, Mail, Award } from "lucide-react";
+import { personalInfo } from "../mock";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +41,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* CHANGED NAME */}
           <div className="font-bold text-xl text-slate-800">
-            <span className="text-blue-600">Youssef</span> Kandil
+            <span className="text-blue-600">{personalInfo.firstName}</span> {personalInfo.lastName}
           </div>
 
           {/* Desktop Navigation */}

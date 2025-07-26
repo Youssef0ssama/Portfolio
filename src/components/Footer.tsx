@@ -1,4 +1,5 @@
 import { Heart, Code, Coffee } from "lucide-react";
+import { personalInfo } from "../mock";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +13,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold">
-                <span className="text-blue-400">Youssef</span> Kandil
+                <span className="text-blue-400">{personalInfo.firstName}</span> {personalInfo.lastName}
               </h3>
               <p className="text-slate-300 leading-relaxed">
                 Junior frontend developer passionate about creating innovative
@@ -64,16 +65,16 @@ const Footer = () => {
               <div className="space-y-2 text-slate-300">
                 <p>Open to junior frontend developer roles</p>
                 <a
-                  href="mailto:youssefossama210@gmail.com"
+                  href={`mailto:${personalInfo.email}`}
                   className="block text-blue-400 hover:text-blue-300 transition-colors duration-200"
                 >
-                  youssefossama210@gmail.com
+                  {personalInfo.email}
                 </a>
                 <a
-                  href="tel:+2001061836090"
+                  href={`tel:${personalInfo.phone.replace(/\s+/g, "")}`}
                   className="block text-blue-400 hover:text-blue-300 transition-colors duration-200"
                 >
-                  +20 01061836090
+                  {personalInfo.phone}
                 </a>
               </div>
             </div>
@@ -83,11 +84,11 @@ const Footer = () => {
           <div className="border-t border-slate-700 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-slate-400 text-sm">
-                © {currentYear} Youssef Kandil. All rights reserved.
+                © {currentYear} {personalInfo.firstName} {personalInfo.lastName}. All rights reserved.
               </p>
               <div className="flex items-center space-x-6">
                 <a
-                  href="https://github.com/Youssef0ssama"
+                  href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-blue-400 transition-colors duration-200 text-sm"
@@ -95,7 +96,7 @@ const Footer = () => {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/youssef-0ssama/"
+                  href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-blue-400 transition-colors duration-200 text-sm"

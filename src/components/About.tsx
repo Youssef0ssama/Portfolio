@@ -1,3 +1,4 @@
+import { highlights, aboutStats, aboutTechStack } from "../mock";
 import {
   Code,
   LayoutTemplate,
@@ -8,40 +9,6 @@ import {
 } from "lucide-react";
 
 const About = () => {
-  const highlights = [
-    {
-      icon: Code,
-      title: "Frontend Development",
-      description:
-        "Building responsive websites with HTML, CSS, and JavaScript",
-    },
-    {
-      icon: LayoutTemplate,
-      title: "React Applications",
-      description: "Developing interactive UIs using React framework",
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile-First Design",
-      description: "Creating responsive interfaces for all devices",
-    },
-    {
-      icon: Database,
-      title: "Database Integration",
-      description: "Working with MySQL for data management",
-    },
-    {
-      icon: GitBranch,
-      title: "Version Control",
-      description: "Utilizing Git for collaborative development",
-    },
-    {
-      icon: Brush,
-      title: "UI/UX Design",
-      description: "Designing interfaces with Figma and Illustrator",
-    },
-  ];
-
   return (
     <section id="about" className="py-20 bg-white/50">
       <div className="container mx-auto px-6">
@@ -81,17 +48,7 @@ const About = () => {
 
               <div className="flex flex-wrap gap-3 mt-8">
                 {/* Updated to match CV skills */}
-                {[
-                  "HTML",
-                  "CSS",
-                  "JavaScript",
-                  "React",
-                  "Python",
-                  "Java",
-                  "MySQL",
-                  "Git",
-                  "Figma",
-                ].map((tech) => (
+                {aboutTechStack.map((tech) => (
                   <span
                     key={tech}
                     className="px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 rounded-full text-sm font-medium"
@@ -127,12 +84,7 @@ const About = () => {
 
           {/* Stats Section - Updated to match CV */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "3", label: "Projects" },
-              { number: "2", label: "Certificates" },
-              { number: "4+", label: "Years of Study" },
-              { number: "∞", label: "Learning Mindset" },
-            ].map((stat, index) => (
+            {aboutStats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2">
                   {stat.number}

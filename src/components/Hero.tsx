@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import profile_pic from "../assets/images/My photo.jpg"; 
+import { personalInfo } from "../mock";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -35,7 +35,7 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-slate-800 mb-6">
               Hi, I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                Youssef
+                {personalInfo.firstName}
               </span>
             </h1>
 
@@ -48,9 +48,7 @@ const Hero = () => {
 
             {/* Description - Updated to match CV objective */}
             <p className="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl md:max-w-md leading-relaxed mx-auto md:mx-0">
-              A junior frontend developer eager to apply theoretical knowledge to
-              real-world projects. Passionate about technology and aiming to
-              contribute analytical skills and creativity to innovative solutions.
+              {personalInfo.description}
             </p>
 
             {/* Action Buttons */}
@@ -80,7 +78,7 @@ const Hero = () => {
             {/* Contact Links - Updated to match CV */}
             <div className="flex justify-center md:justify-start space-x-6 mb-12">
               <a
-                href="https://github.com/Youssef0ssama"
+                href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-slate-700 hover:text-blue-600"
@@ -88,7 +86,7 @@ const Hero = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/youssef-0ssama/"
+                href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-slate-700 hover:text-blue-600"
@@ -96,13 +94,13 @@ const Hero = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:youssefossama210@gmail.com"
+                href={`mailto:${personalInfo.email}`}
                 className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-slate-700 hover:text-blue-600"
               >
                 <Mail size={24} />
               </a>
               <a
-                href="tel:+2001061836090"
+                href={`tel:${personalInfo.phone.replace(/\s+/g, "")}`}
                 className="p-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-slate-700 hover:text-blue-600"
               >
                 <Phone size={24} />
@@ -114,8 +112,8 @@ const Hero = () => {
           <div className="flex-1 md:basis-1/2 w-full flex justify-center md:justify-end order-1 md:order-2 mb-8 md:mb-0">
             <div className="w-72 h-72 md:w-96 md:h-96 bg-white overflow-hidden shadow-2xl border-4 border-blue-100">
               <img
-                src={profile_pic}
-                alt="Youssef"
+                src={personalInfo.profilePic}
+                alt={`${personalInfo.firstName} ${personalInfo.lastName}`}
                 className="w-full h-full object-cover"
               />
             </div>
