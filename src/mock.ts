@@ -128,7 +128,7 @@ export const projects = [
   {
     title: "Hotel and Tour Booking Platform",
     description:
-      "Web project serves as a modern and user-friendly hotel and tour booking platform, offering an immersive experience inspired by leading travel websites. (Career 180/Learn it Final Project)",
+      "Web project serves as a modern and user-friendly hotel and tour booking platform, offering an immersive experience inspired by leading travel websites.",
     icon: Home,
     image: hotelImage,
     technologies: ["React.js", "Redux", "CSS Modules", "JavaScript"],

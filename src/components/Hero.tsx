@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, FileText } from "lucide-react";
 import { personalInfo } from "../mock";
 
 const Hero = () => {
@@ -63,16 +63,15 @@ const Hero = () => {
               >
                 View My Work
               </button>
-              <button
-                onClick={() =>
-                  document
-                    .querySelector("#contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+              <a
+                href="https://drive.google.com/drive/folders/1tiPNkJR5ufe29iL1Dy43sUsaS-UjsoQ2?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
               >
-                Get In Touch
-              </button>
+                <FileText size={20} />
+                My Resume
+              </a>
             </div>
 
             {/* Contact Links - Updated to match CV */}

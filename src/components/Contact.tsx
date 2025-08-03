@@ -57,11 +57,7 @@ const Contact = () => {
                 Touch
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-8"></div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Interested in discussing opportunities or my projects? I'm open to
-              junior frontend developer roles and collaborations.
-            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-4"></div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">

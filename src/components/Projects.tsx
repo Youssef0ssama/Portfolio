@@ -18,10 +18,6 @@ const Projects = () => {
               </span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-8"></div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              A showcase of my recent work demonstrating frontend development
-              skills, modern technologies, and creative problem-solving.
-            </p>
           </div>
 
           {/* Projects Grid */}
@@ -30,6 +26,7 @@ const Projects = () => {
               <div
                 key={index}
                 className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden border border-white/20"
+                style={{ width: '380px', minWidth: '380px', maxWidth: '380px', margin: '0 auto' }}
               >
                 <div className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden h-full">
                   {/* Image at the top */}
@@ -94,23 +91,6 @@ const Projects = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <p className="text-lg text-slate-600 mb-8">
-              Want to see more of my work or discuss a project?
-            </p>
-            <button
-              onClick={() =>
-                document
-                  .querySelector("#contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
-              Let's Work Together
-            </button>
           </div>
         </div>
       </div>

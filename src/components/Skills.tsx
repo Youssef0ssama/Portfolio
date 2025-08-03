@@ -1,4 +1,4 @@
-import { skillCategories, skillTraits } from "../mock";
+import { skillCategories} from "../mock";
 
 const Skills = () => {
   const getBarColor = (level: number) => {
@@ -20,11 +20,7 @@ const Skills = () => {
                 Skills
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-8"></div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              A comprehensive overview of my technical expertise based on my
-              education, projects, and professional experience.
-            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto "></div>
           </div>
 
           {/* Skills Grid */}
@@ -69,30 +65,6 @@ const Skills = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
-              <h3 className="text-2xl font-bold text-slate-800 mb-4">
-                Continuous Learning & Growth
-              </h3>
-              <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
-                As a junior developer, I'm committed to continuously improving
-                my skills through coursework, personal projects, and staying
-                updated with the latest frontend technologies and design trends.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                {skillTraits.map((trait) => (
-                  <span
-                    key={trait}
-                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-sm font-medium"
-                  >
-                    {trait}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>

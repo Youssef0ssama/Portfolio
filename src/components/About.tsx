@@ -1,4 +1,4 @@
-import { highlights, aboutStats, aboutTechStack } from "../mock";
+import { highlights, aboutTechStack } from "../mock";
 
 const About = () => {
   return (
@@ -72,18 +72,6 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Stats Section - Updated to match CV */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {aboutStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-slate-600 font-medium">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
